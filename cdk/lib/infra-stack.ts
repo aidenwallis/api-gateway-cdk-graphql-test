@@ -41,6 +41,7 @@ export class InfraStack extends cdk.Stack {
 
     const api = new apigateway.LambdaRestApi(this, "GQLAPI", {
       handler: lambdaService,
+      proxy: false,
     });
 
     // this is the /graphql endpoint proxy handler, all requests to /graphql are now handled by the lambda
